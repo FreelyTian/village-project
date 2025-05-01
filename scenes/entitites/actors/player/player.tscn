@@ -1,18 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://83wvun8w3enr"]
+[gd_scene load_steps=7 format=3 uid="uid://83wvun8w3enr"]
 
 [ext_resource type="Script" uid="uid://c5w0vpd4q8s1u" path="res://scripts/entitities/player/player.gd" id="1_n5s0j"]
+[ext_resource type="Script" uid="uid://b3u8cnvx08b6x" path="res://scripts/resources/player_movement_data.gd" id="2_dyinc"]
 [ext_resource type="Texture2D" uid="uid://yckijag6t1b8" path="res://assets/prototype/player/base/blueboy-td-front.png" id="2_qx8hf"]
+
+[sub_resource type="Resource" id="Resource_suyff"]
+script = ExtResource("2_dyinc")
+SPEED = 90.0
+accel = 0.2
+fric = 0.2
+metadata/_custom_type_script = "uid://b3u8cnvx08b6x"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qx8hf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyinc"]
 size = Vector2(6, 3)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_n5s0j")
+movedata = SubResource("Resource_suyff")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_qx8hf")
 hframes = 4
 vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sprite"]
+
+[node name="AnimationTree" type="AnimationTree" parent="sprite/AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_qx8hf")
+anim_player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.5)
