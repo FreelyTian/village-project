@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://83wvun8w3enr"]
+
+[ext_resource type="Script" uid="uid://c5w0vpd4q8s1u" path="res://scripts/entitities/player/player.gd" id="1_n5s0j"]
+[ext_resource type="Texture2D" uid="uid://yckijag6t1b8" path="res://assets/prototype/player/base/blueboy-td-front.png" id="2_qx8hf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyinc"]
+size = Vector2(6, 3)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_n5s0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qx8hf")
+hframes = 4
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_dyinc")
