@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhqh2yoqq43xp"
-path="res://.godot/imported/blueboy-td-back (1).png-de3cf9b2d3ed61793eca4506a5d8505b.ctex"
+uid="uid://dpuuu6nu64y56"
+path="res://.godot/imported/Model spritesheet.png-99f33defeb4730db131bcf0dc57ede23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/prototype/player/base/blueboy-td-back (1).png"
-dest_files=["res://.godot/imported/blueboy-td-back (1).png-de3cf9b2d3ed61793eca4506a5d8505b.ctex"]
+source_file="res://assets/prototype/player/base/Model spritesheet.png"
+dest_files=["res://.godot/imported/Model spritesheet.png-99f33defeb4730db131bcf0dc57ede23.ctex"]
 
 [params]
 
